@@ -1,139 +1,40 @@
 const books = [
   {
-    title: "宵待草の誘い",
-    author: "西澤保彦",
-    categories: ["ミステリ", "短編"],
+    title: "ゾンビですがなにか？",
+    author: "涼木いちか",
+    categories: ["ブロマンス", "日常SF", "短編"],
     keywords: ["余韻", "不思議", "静か"],
-    checkedAt: "2025-09-21",
+    checkedAt: "2026-09-21",
     comment: "日常のすぐ隣にある、少し不穏で不思議な世界。短編でサクッと読めるのに、余韻が残る。",
     color: "#102b47",
     amazonUrl: "https://link.amazon/B0bvsdrMr",
     imageUrl: "https://m.media-amazon.com/images/I/81gZ+973iaL._AC_AIweblab1378949,T3_FMavif_SF688,436_PQ60_.jpg?aicid=productui-image-1"
   },
   {
-    title: "七回目の夏",
-    author: "西澤保彦",
-    categories: ["ミステリ", "日常"],
+    title: "友達だから、違うだろ",
+    author: "涼木いちか",
+    categories: ["ブロマンス", "友達以上BL未満","関係性小説"],
     keywords: ["夏", "記憶", "青春"],
-    checkedAt: "2025-09-21",
+    checkedAt: "2026-09-21",
     comment: "どこにでもある夏の、どこにもない物語。",
     color: "#7f9b8d",
-    amazonUrl: "",
-    imageUrl: ""
+    amazonUrl: "https://link.amazon/B03BJC6ET",
+    imageUrl: "https://m.media-amazon.com/images/I/51SSoiMR+OL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg"
   },
   {
-    title: "解けない夜",
-    author: "西澤保彦",
-    categories: ["ミステリ", "連作短編"],
-    keywords: ["夜", "謎", "会話"],
-    checkedAt: "2025-09-21",
-    comment: "謎がすべて解けなくても、きっとこの夜は嫌いにならない。",
-    color: "#17223a",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "硝子の庭で",
-    author: "青井夏海",
-    categories: ["ミステリ", "ロマンス"],
-    keywords: ["庭", "家族", "秘密"],
-    checkedAt: "2025-08-14",
-    comment: "柔らかい会話の奥に、手触りのある秘密が沈んでいる一冊。",
-    color: "#496a70",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "夜明け前の喫茶店",
-    author: "近藤史恵",
-    categories: ["日常", "エッセイ"],
-    keywords: ["喫茶店", "仕事", "朝"],
-    checkedAt: "2025-08-03",
-    comment: "忙しい日の終わりに読むと、少しだけ呼吸が整う。",
-    color: "#6e5a4b",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "星を綴る人",
-    author: "小川一水",
-    categories: ["SF", "短編"],
-    keywords: ["宇宙", "手紙", "未来"],
-    checkedAt: "2025-07-22",
-    comment: "遠い未来の話なのに、手元の紙をめくるような近さがある。",
-    color: "#203c65",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "霧の国の郵便屋",
-    author: "梨木香歩",
-    categories: ["ファンタジー", "日常"],
-    keywords: ["旅", "手紙", "霧"],
-    checkedAt: "2025-06-30",
-    comment: "静かな世界を歩いていく気持ちよさ。雨の日に読みたい。",
-    color: "#8b9794",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "古書店の午後",
-    author: "北村薫",
-    categories: ["ミステリ", "日常"],
-    keywords: ["本屋", "古書", "午後"],
-    checkedAt: "2025-06-18",
-    comment: "大きな事件より、小さな違和感が好きな日にぴったり。",
-    color: "#755c43",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "眠れない森の記録",
-    author: "恒川光太郎",
-    categories: ["ホラー", "ファンタジー"],
-    keywords: ["森", "怪異", "夜"],
-    checkedAt: "2025-05-29",
-    comment: "怖いのに美しい。ページの向こう側に、戻れない森がある。",
-    color: "#26362f",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "小さな余白の作り方",
-    author: "群ようこ",
-    categories: ["エッセイ"],
-    keywords: ["暮らし", "余白", "家"],
-    checkedAt: "2025-05-07",
-    comment: "自分のペースを取り戻したいときの、軽くて頼もしい読書。",
-    color: "#a28a6c",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "月曜日の探偵",
-    author: "坂木司",
-    categories: ["ミステリ", "日常"],
-    keywords: ["仕事", "探偵", "月曜日"],
-    checkedAt: "2025-04-16",
-    comment: "週明けの重さを、ちょっとだけ物語に預けられる。",
-    color: "#315777",
-    amazonUrl: "",
-    imageUrl: ""
-  },
-  {
-    title: "海辺の翻訳者",
-    author: "宮下奈都",
-    categories: ["ロマンス", "日常"],
+    title: "友達だから、違うだろ２",
+    author: "涼木いちか",
+    categories: ["ブロマンス", "友達以上BL未満","関係性小説"],
     keywords: ["海", "言葉", "手紙"],
-    checkedAt: "2025-03-25",
+    checkedAt: "2026-09-21",
     comment: "ことばを選ぶ人たちの、静かで明るい距離感が残る。",
     color: "#527c91",
-    amazonUrl: "",
-    imageUrl: ""
+    amazonUrl: "https://link.amazon/B0iTNGemC",
+    imageUrl: "https://m.media-amazon.com/images/I/41Gf0RpEyVL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg"
   }
 ];
 
-const categories = ["すべて", "ミステリ", "ロマンス", "SF", "ファンタジー", "ホラー", "エッセイ", "日常", "その他"];
+const categories = ["すべて", "ミステリ", "ブロマンス", "BL", "友達以上BL未満", "関係性小説", "その他"];
 const state = {
   category: "すべて",
   query: "",
