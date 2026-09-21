@@ -6,7 +6,8 @@ const books = [
     keywords: ["余韻", "不思議", "静か"],
     checkedAt: "2025-09-21",
     comment: "日常のすぐ隣にある、少し不穏で不思議な世界。短編でサクッと読めるのに、余韻が残る。",
-    color: "#102b47"
+    color: "#102b47",
+    amazonUrl: "https://link.amazon/B0bvsdrMr"
   },
   {
     title: "七回目の夏",
@@ -15,7 +16,8 @@ const books = [
     keywords: ["夏", "記憶", "青春"],
     checkedAt: "2025-09-21",
     comment: "どこにでもある夏の、どこにもない物語。",
-    color: "#7f9b8d"
+    color: "#7f9b8d",
+    amazonUrl: ""
   },
   {
     title: "解けない夜",
@@ -24,7 +26,8 @@ const books = [
     keywords: ["夜", "謎", "会話"],
     checkedAt: "2025-09-21",
     comment: "謎がすべて解けなくても、きっとこの夜は嫌いにならない。",
-    color: "#17223a"
+    color: "#17223a",
+    amazonUrl: ""
   },
   {
     title: "硝子の庭で",
@@ -33,7 +36,8 @@ const books = [
     keywords: ["庭", "家族", "秘密"],
     checkedAt: "2025-08-14",
     comment: "柔らかい会話の奥に、手触りのある秘密が沈んでいる一冊。",
-    color: "#496a70"
+    color: "#496a70",
+    amazonUrl: ""
   },
   {
     title: "夜明け前の喫茶店",
@@ -42,7 +46,8 @@ const books = [
     keywords: ["喫茶店", "仕事", "朝"],
     checkedAt: "2025-08-03",
     comment: "忙しい日の終わりに読むと、少しだけ呼吸が整う。",
-    color: "#6e5a4b"
+    color: "#6e5a4b",
+    amazonUrl: ""
   },
   {
     title: "星を綴る人",
@@ -51,7 +56,8 @@ const books = [
     keywords: ["宇宙", "手紙", "未来"],
     checkedAt: "2025-07-22",
     comment: "遠い未来の話なのに、手元の紙をめくるような近さがある。",
-    color: "#203c65"
+    color: "#203c65",
+    amazonUrl: ""
   },
   {
     title: "霧の国の郵便屋",
@@ -60,7 +66,8 @@ const books = [
     keywords: ["旅", "手紙", "霧"],
     checkedAt: "2025-06-30",
     comment: "静かな世界を歩いていく気持ちよさ。雨の日に読みたい。",
-    color: "#8b9794"
+    color: "#8b9794",
+    amazonUrl: ""
   },
   {
     title: "古書店の午後",
@@ -69,7 +76,8 @@ const books = [
     keywords: ["本屋", "古書", "午後"],
     checkedAt: "2025-06-18",
     comment: "大きな事件より、小さな違和感が好きな日にぴったり。",
-    color: "#755c43"
+    color: "#755c43",
+    amazonUrl: ""
   },
   {
     title: "眠れない森の記録",
@@ -78,7 +86,8 @@ const books = [
     keywords: ["森", "怪異", "夜"],
     checkedAt: "2025-05-29",
     comment: "怖いのに美しい。ページの向こう側に、戻れない森がある。",
-    color: "#26362f"
+    color: "#26362f",
+    amazonUrl: ""
   },
   {
     title: "小さな余白の作り方",
@@ -87,7 +96,8 @@ const books = [
     keywords: ["暮らし", "余白", "家"],
     checkedAt: "2025-05-07",
     comment: "自分のペースを取り戻したいときの、軽くて頼もしい読書。",
-    color: "#a28a6c"
+    color: "#a28a6c",
+    amazonUrl: ""
   },
   {
     title: "月曜日の探偵",
@@ -96,7 +106,8 @@ const books = [
     keywords: ["仕事", "探偵", "月曜日"],
     checkedAt: "2025-04-16",
     comment: "週明けの重さを、ちょっとだけ物語に預けられる。",
-    color: "#315777"
+    color: "#315777",
+    amazonUrl: ""
   },
   {
     title: "海辺の翻訳者",
@@ -105,7 +116,8 @@ const books = [
     keywords: ["海", "言葉", "手紙"],
     checkedAt: "2025-03-25",
     comment: "ことばを選ぶ人たちの、静かで明るい距離感が残る。",
-    color: "#527c91"
+    color: "#527c91",
+    amazonUrl: ""
   }
 ];
 
@@ -141,8 +153,20 @@ function formatDate(value) {
 }
 
 function amazonUrl(book) {
+  if (book.amazonUrl && book.amazonUrl.trim()) {
+    return book.amazonUrl.trim();
+  }
+
   const query = encodeURIComponent(`${book.title} ${book.author} Kindle Unlimited`);
   return `https://www.amazon.co.jp/s?k=${query}`;
+}
+
+function escapeAttribute(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
 }
 
 function matchesBook(book) {
@@ -186,7 +210,7 @@ function renderBooks() {
       </div>
       <div class="book-meta">
         <span>KU確認日：${formatDate(book.checkedAt)}</span>
-        <a class="amazon-link" href="${amazonUrl(book)}" target="_blank" rel="noopener">Amazonで見る</a>
+        <a class="amazon-link" href="${escapeAttribute(amazonUrl(book))}" target="_blank" rel="noopener">Amazonで見る</a>
       </div>
     </article>
   `).join("");
