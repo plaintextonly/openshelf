@@ -237,7 +237,7 @@ select {
   align-content: end;
   padding: 16px 14px;
   color: #fff;
-  border: 1px solid rgba(12, 28, 47, 0.3);
+  border: 0;
   box-shadow: 0 12px 26px rgba(12, 28, 47, 0.16);
   overflow: hidden;
   position: relative;
@@ -256,7 +256,8 @@ select {
 .cover-photo {
   display: block;
   padding: 0;
-  background: #fff;
+  background: transparent;
+  box-shadow: none;
 }
 
 .cover-photo::before {
@@ -270,7 +271,7 @@ select {
   width: 100%;
   height: 100%;
   padding: 0;
-  background: #fff;
+  background: transparent;
   object-fit: contain;
   object-position: center;
 }
@@ -319,7 +320,9 @@ select {
 .comment {
   max-width: 520px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 300;
+  font-size: 0.85rem;
+  font-family: "Hiragino Sans", "Yu Gothic", "Helvetica Neue", Arial, sans-serif;
 }
 
 .book-meta {
@@ -358,6 +361,76 @@ select {
   border: 1px dashed var(--line);
   text-align: center;
   font-weight: 700;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 34px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.pagination:empty {
+  display: none;
+}
+
+.pagination button {
+  min-width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pagination button[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: rgba(255, 254, 250, 0.95);
+  color: var(--ink);
+  box-shadow: 0 12px 32px rgba(12, 28, 47, 0.18);
+  cursor: pointer;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--accent-soft);
+  outline-offset: 3px;
 }
 
 .visually-hidden {
@@ -479,5 +552,13 @@ select {
   .amazon-link {
     min-width: 144px;
     min-height: 44px;
+  }
+
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
   }
 }

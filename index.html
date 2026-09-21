@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>plaintextonly | Kindle Unlimited Books</title>
   <meta name="description" content="Kindle Unlimitedで読んだ本、気になる本を静かに記録する紹介サイト。">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
   <div class="site-shell">
@@ -25,10 +25,9 @@
       <section class="page-lead" aria-labelledby="pageTitle">
         <div>
           <h1 id="pageTitle">Books</h1>
-          <p>KUで読んだ、または見つけた本の記録です。<br>好きで揃っています。</p>
+          <p>KUで読んだ、または見つけた本の記録です。<br>KUから外れていることに気づいたタイミングで削除します。</p>
         </div>
-        <p class="lead-note">読めるうちに、<br>気になるものを、好きなだけ。</p>
-        <img class="book-stack-image" src="images/book-stack.png" width="116" height="80" alt="" aria-hidden="true">
+        <p class="lead-note"><br></p>
       </section>
 
       <section class="controls" aria-label="本の絞り込み">
@@ -55,10 +54,15 @@
       </section>
 
       <section class="book-list" id="bookList" aria-live="polite"></section>
+      <nav class="pagination" id="pagination" aria-label="ページ送り"></nav>
       <p class="empty-state" id="emptyState" hidden>該当する本が見つかりませんでした。</p>
+      <br />
+      ※当サイトはAmazonアソシエイト・プログラムに参加しています。
     </main>
   </div>
 
-  <script src="script.js?v=4"></script>
+  <button class="back-to-top" type="button" id="backToTop" aria-label="ページの先頭へ戻る">↑</button>
+
+  <script src="script.js?v=8"></script>
 </body>
 </html>
