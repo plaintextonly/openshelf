@@ -8,7 +8,7 @@ const books = [
     comment: "日常のすぐ隣にある、少し不穏で不思議な世界。短編でサクッと読めるのに、余韻が残る。",
     color: "#102b47",
     amazonUrl: "https://link.amazon/B0bvsdrMr",
-    imageUrl: "https://m.media-amazon.com/images/I/81gZ+973iaL._AC_AIweblab1378949,T3_FMavif_SF688,436_PQ60_.jpg?aicid=productui-image-1"
+    imageUrl: "https://m.media-amazon.com/images/I/81gZ+973iaL.jpg"
   },
   {
     title: "友達だから、違うだろ",
@@ -19,7 +19,7 @@ const books = [
     comment: "どこにでもある夏の、どこにもない物語。",
     color: "#7f9b8d",
     amazonUrl: "https://link.amazon/B03BJC6ET",
-    imageUrl: "https://m.media-amazon.com/images/I/51SSoiMR+OL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg"
+    imageUrl: "https://m.media-amazon.com/images/I/51SSoiMR+OL.jpg"
   },
   {
     title: "友達だから、違うだろ２",
@@ -30,7 +30,7 @@ const books = [
     comment: "ことばを選ぶ人たちの、静かで明るい距離感が残る。",
     color: "#527c91",
     amazonUrl: "https://link.amazon/B0iTNGemC",
-    imageUrl: "https://m.media-amazon.com/images/I/41Gf0RpEyVL._PJku-sticker-v7,TopRight,0,-50._SY300_.jpg"
+    imageUrl: "https://m.media-amazon.com/images/I/41Gf0RpEyVL.jpg"
   }
 ];
 
@@ -85,10 +85,12 @@ function escapeAttribute(value) {
 function bookCover(book) {
   if (book.imageUrl && book.imageUrl.trim()) {
     return `
-      <img class="cover cover-image"
-        src="${escapeAttribute(book.imageUrl.trim())}"
-        alt="${escapeAttribute(`${book.title}の表紙`)}"
-        loading="lazy">
+      <div class="cover cover-photo">
+        <img class="cover-image"
+          src="${escapeAttribute(book.imageUrl.trim())}"
+          alt="${escapeAttribute(`${book.title}の表紙`)}"
+          loading="lazy">
+      </div>
     `;
   }
 

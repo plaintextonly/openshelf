@@ -229,8 +229,9 @@ select {
 }
 
 .cover {
-  width: 128px;
-  aspect-ratio: 0.68;
+  --cover-width: 128px;
+  width: var(--cover-width);
+  height: calc(var(--cover-width) / 0.68);
   display: grid;
   align-content: end;
   padding: 16px 14px;
@@ -239,6 +240,7 @@ select {
   box-shadow: 0 12px 26px rgba(12, 28, 47, 0.16);
   overflow: hidden;
   position: relative;
+  align-self: start;
 }
 
 .cover::before {
@@ -250,15 +252,26 @@ select {
     radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.34), transparent 28%);
 }
 
-.cover-image {
+.cover-photo {
   display: block;
   padding: 0;
   background: #fff;
-  object-fit: cover;
 }
 
-.cover-image::before {
+.cover-photo::before {
   content: none;
+}
+
+.cover-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: var(--cover-width);
+  height: calc(var(--cover-width) / 0.68);
+  padding: 0;
+  background: #fff;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .cover-title {
@@ -443,7 +456,7 @@ select {
   }
 
   .cover {
-    width: 86px;
+    --cover-width: 86px;
     padding: 12px 10px;
   }
 
