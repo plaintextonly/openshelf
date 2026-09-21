@@ -250,6 +250,17 @@ select {
     radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.34), transparent 28%);
 }
 
+.cover-image {
+  display: block;
+  padding: 0;
+  background: #fff;
+  object-fit: cover;
+}
+
+.cover-image::before {
+  content: none;
+}
+
 .cover-title {
   position: relative;
   writing-mode: vertical-rl;
